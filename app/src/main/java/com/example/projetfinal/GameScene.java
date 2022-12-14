@@ -318,6 +318,12 @@ public class GameScene extends Scene{
         //GameOver update
         else
         {
+            User tempUser = Game.database().findById(1);// + sound
+            if (tempUser.getScore() < SCORE) { tempUser.setScore(SCORE); }
+            tempUser.setPieces(tempUser.getPieces() + Game.getCoins());
+            Game.database().delete(Game.database().findById(1));
+            Game.database().insert(tempUser);
+
             gameOver.update();
             pauseBackground.update();
             restart.update();

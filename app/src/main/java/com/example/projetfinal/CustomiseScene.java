@@ -41,12 +41,12 @@ public class CustomiseScene extends Scene{
         left = new CustomButton(R.drawable.flechegauchespritesheet, 5,3,3, Scene.canvasSize.getX()/2 - 400, Scene.canvasSize.getY()/2, 200,200,context);
         right = new CustomButton(R.drawable.flechedroitespritesheet, 5,3,3, Scene.canvasSize.getX()/2 + 400, Scene.canvasSize.getY()/2, 200,200,context);
 
-        skins.add(new Buyable(0, R.drawable.baseskinspritesheet, 5, 1, 70,70,context,this));
+        skins.add(new Buyable(0, R.drawable.baseskinspritesheet, 5, 1, 70,70,context,this, 0));
         skins.get(0).giveBuyable();
-        skins.add(new Buyable(50, R.drawable.skintestspritesheet, 5, 4, 70,70,context, this));
-        skins.add(new Buyable(75, R.drawable.skintestspritesheet, 5, 4, 70,70,context, this));
-        skins.add(new Buyable(100, R.drawable.skintestspritesheet, 5, 4, 70,70,context, this ));
-        skins.add(new Buyable(200, R.drawable.skintestspritesheet, 5, 4, 70,70,context, this));
+        skins.add(new Buyable(50, R.drawable.skintestspritesheet, 5, 4, 70,70,context, this, 1));
+        skins.add(new Buyable(75, R.drawable.skintestspritesheet, 5, 4, 70,70,context, this, 2));
+        skins.add(new Buyable(100, R.drawable.skintestspritesheet, 5, 4, 70,70,context, this, 3 ));
+        skins.add(new Buyable(200, R.drawable.skintestspritesheet, 5, 4, 70,70,context, this, 4));
 
         back.setButtonAction(back.new ButtonAction() {
             @Override

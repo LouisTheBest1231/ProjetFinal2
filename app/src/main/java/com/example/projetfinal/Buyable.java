@@ -24,10 +24,14 @@ public class Buyable {
 
     private CustomiseScene parentScene;
 
-    public Buyable(int price, int spritesheet, int frameR, int numFrame, int width, int height, Context context, CustomiseScene parentScene)
+    private int BUYABLEINDEX;
+
+    public Buyable(int price, int spritesheet, int frameR, int numFrame, int width, int height, Context context, CustomiseScene parentScene, int index )
     {
         this.price = price;
         priceTextSize=100;
+        BUYABLEINDEX = index;
+
 
         this.parentScene = parentScene;
 
@@ -53,6 +57,7 @@ public class Buyable {
             public void onClick() {
 
                 Player.setSkin(skin);
+                //Set select selon BUYABLEINDEX
 
             }
         });
@@ -60,6 +65,7 @@ public class Buyable {
         buy.setButtonAction(buy.new ButtonAction() {
             @Override
             public void onClick() {
+                //Set skin achete selon BUYABLEINDEX
                 buy();
             }
         });
@@ -82,6 +88,7 @@ public class Buyable {
     public void buy()
     {
         ISBOUGHT = true;
+        //UPDATE COINS QUAND ACHETE
         Game.useCoin(price);
         parentScene.updateOnce();
 

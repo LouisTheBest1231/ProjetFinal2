@@ -15,6 +15,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
 
 
     private int SOUNDVALUE = 5;
+
     private static int COINS = 100;
 
     private GameLoop gameLoop;

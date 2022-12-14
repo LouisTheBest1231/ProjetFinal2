@@ -228,6 +228,7 @@ public class GameScene extends Scene{
             back.draw(canvas);
             X.draw(canvas);
         }
+        //GAMEOVER
         else if(PAUSE == 2)
         {
             pauseBackground.draw(canvas);
@@ -274,6 +275,8 @@ public class GameScene extends Scene{
                 enemies.get(i).update(GameLoop.getAverageUPS() / 1000);
                 if(enemies.get(i).testCollision(player.getPosition(), player.getSize() ))
                 {
+                    //CHECK SI LE SCORE EST PLUS GRAND QUE HIGHSCORE
+                    //UPDATE LE NOMBRE DE PIECE
                     PAUSE = 2;
                     break;
                 }
@@ -312,6 +315,7 @@ public class GameScene extends Scene{
             back.update();
             X.update();
         }
+        //GameOver update
         else
         {
             gameOver.update();

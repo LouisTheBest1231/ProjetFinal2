@@ -43,6 +43,8 @@ public class SettingScene extends Scene{
                 int soundValue = ((son.getAnimateurState() - 1)%6 + 6)%6;
                 son.setAnimateurState(  soundValue);
                 pointerGame.setSoundValue(soundValue);
+
+                // - sound
             }
         });
 
@@ -52,6 +54,7 @@ public class SettingScene extends Scene{
                 int soundValue = ((son.getAnimateurState() + 1)%6 + 6)%6;
                 son.setAnimateurState(soundValue);
                 pointerGame.setSoundValue(soundValue);
+                // + sound
             }
         });
 

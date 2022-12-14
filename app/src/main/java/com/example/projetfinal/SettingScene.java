@@ -43,7 +43,11 @@ public class SettingScene extends Scene{
                 int soundValue = ((son.getAnimateurState() - 1)%6 + 6)%6;
                 son.setAnimateurState(  soundValue);
                 pointerGame.setSoundValue(soundValue);
-
+                User tempUser = Game.database().findById(1);// + sound
+                if (tempUser.getSound() > 0) { tempUser.setSound(tempUser.getSound() - 20); }
+                else { tempUser.setSound(100); }
+                Game.database().delete(Game.database().findById(1));
+                Game.database().insert(tempUser);
                 // - sound
             }
         });
@@ -54,7 +58,11 @@ public class SettingScene extends Scene{
                 int soundValue = ((son.getAnimateurState() + 1)%6 + 6)%6;
                 son.setAnimateurState(soundValue);
                 pointerGame.setSoundValue(soundValue);
-                // + sound
+                User tempUser = Game.database().findById(1);// + sound
+                if (tempUser.getSound() < 100) { tempUser.setSound(tempUser.getSound() + 20); }
+                else { tempUser.setSound(0); }
+                Game.database().delete(Game.database().findById(1));
+                Game.database().insert(tempUser);
             }
         });
 

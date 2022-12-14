@@ -10,6 +10,7 @@ import android.view.SurfaceView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
+import androidx.room.Room;
 
 public class Game extends SurfaceView implements SurfaceHolder.Callback {
 
@@ -20,9 +21,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
 
     private GameLoop gameLoop;
 
-
-
-
+    private static UserDao userDao;
 
     Scene currentScene;
 
@@ -45,6 +44,17 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
 
 
         setFocusable(true);
+
+
+
+        AppDatabase db;
+        db = Room.databaseBuilder(context.getApplicationContext(),
+                AppDatabase.class, "db").allowMainThreadQueries().fallbackToDestructiveMigration().build();
+        userDao = db.userDao();
+        User user = new User(0, 100);
+        userDao.insert(user);
+
+
     }
 
 
@@ -184,6 +194,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
     {
         COINS  = Math.max(COINS-amount, 0);
     }
+    public static UserDao database() {return userDao;}
 
 }
 

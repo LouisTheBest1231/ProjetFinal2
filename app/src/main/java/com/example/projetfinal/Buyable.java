@@ -58,6 +58,13 @@ public class Buyable {
 
                 Player.setSkin(skin);
                 //Set select selon BUYABLEINDEX
+                User tempUser = Game.database().findById(1);// + sound
+                int tempSkin[] = tempUser.getSkins();
+                for (int i = 0; i < tempSkin.length; i++) { if (tempSkin[i] == 2) {tempSkin[i]--; i = tempSkin.length;} }
+                tempSkin[BUYABLEINDEX]++;
+                tempUser.setSkins(tempSkin);
+                Game.database().delete(Game.database().findById(1));
+                Game.database().insert(tempUser);
 
             }
         });
@@ -66,7 +73,14 @@ public class Buyable {
             @Override
             public void onClick() {
                 //Set skin achete selon BUYABLEINDEX
+                User tempUser = Game.database().findById(1);// + sound
+                int tempSkin[] = tempUser.getSkins(); tempSkin[BUYABLEINDEX]++;
+                tempUser.setSkins(tempSkin);
+                Game.database().delete(Game.database().findById(1));
+                Game.database().insert(tempUser);
+
                 buy();
+
             }
         });
 
@@ -90,6 +104,12 @@ public class Buyable {
         ISBOUGHT = true;
         //UPDATE COINS QUAND ACHETE
         Game.useCoin(price);
+
+        User tempUser = Game.database().findById(1);// + sound
+        tempUser.setPieces(tempUser.getPieces() - price);
+        Game.database().delete(Game.database().findById(1));
+        Game.database().insert(tempUser);
+
         parentScene.updateOnce();
 
     }

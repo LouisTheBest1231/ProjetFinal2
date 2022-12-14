@@ -21,16 +21,22 @@ public class User {
     public int score;
 
     /**
-     * The name of the user
+     * The pieces of the user
      */
     @ColumnInfo(name = "pieces")
     public int pieces;
 
     /**
-     * The name of the user
+     * The skins of the user
      */
     @ColumnInfo(name = "skins")
-    public int skins[];
+    public Boolean skins[];
+
+    /**
+     * The selected skin of the user
+     */
+    @ColumnInfo(name = "selectedSkin")
+    public int selectedSkin;
 
     /**
      * The sound setting of the user
@@ -47,7 +53,8 @@ public class User {
         this.score = score;
         this.pieces = pieces;
         this.sound = 100;
-        this.skins = new int[]{2, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        this.skins = new Boolean[]{true, false, false, false, false, false, false, false, false, false};
+        this.selectedSkin = 0;
     }
 
     /**
@@ -110,7 +117,7 @@ public class User {
      *
      * @return skins
      */
-    public int[] getSkins() {
+    public Boolean[] getSkins() {
         return skins;
     }
 
@@ -118,7 +125,23 @@ public class User {
      *
      * @param skins
      */
-    public void setSkins(int[] skins) {
+    public void setSkins(Boolean[] skins) {
         this.skins = skins;
+    }
+
+    /**
+     *
+     * @return selectedSkin
+     */
+    public int getSelectedSkin() {
+        return selectedSkin;
+    }
+
+    /**
+     *
+     * @param selectedSkin
+     */
+    public void setSelectedSkin(int selectedSkin) {
+        this.selectedSkin = selectedSkin;
     }
 }

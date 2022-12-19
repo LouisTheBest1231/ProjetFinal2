@@ -86,7 +86,7 @@ public class User {
      * @return sound
      */
     public int getSound() {
-        return sound;
+        return this.sound;
     }
 
     /**

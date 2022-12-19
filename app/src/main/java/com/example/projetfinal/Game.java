@@ -51,7 +51,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
         db = Room.databaseBuilder(context.getApplicationContext(),
                 AppDatabase.class, "db").allowMainThreadQueries().fallbackToDestructiveMigration().build();
         userDao = db.userDao();
-        if (userDao.getAll().size() < 0) { User user = new User(0, 100); userDao.insert(user); }
+        if (userDao.getAll().size() == 0) { User user = new User(0, 100); userDao.insert(user); }
 
 
 

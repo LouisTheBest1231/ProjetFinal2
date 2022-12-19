@@ -10,6 +10,25 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class Converters {
+
+    // Used by AlarmEntity Boolean[] mDaysOfWeek
+
+    @TypeConverter
+    public static Boolean[] fromString(String value) {
+        Type listType = new TypeToken<Boolean[]>() {}.getType();
+        return new Gson().fromJson(value, listType);
+    }
+
+    @TypeConverter
+    public static String fromBoolean(Boolean[] list) {
+        Gson gson = new Gson();
+        return gson.toJson(list);
+    }
+
+}
+
+/*
+public class Converters {
     @TypeConverter
     public static Boolean[] fromBool(Boolean bool) {
         Type listType = new TypeToken<Boolean[]>() {}.getType();
@@ -23,3 +42,4 @@ public class Converters {
         return json;
     }
 }
+*/

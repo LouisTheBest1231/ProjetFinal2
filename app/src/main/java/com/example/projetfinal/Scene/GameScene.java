@@ -1,4 +1,4 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Scene;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,13 +9,23 @@ import android.view.MotionEvent;
 
 import androidx.core.content.ContextCompat;
 
+import com.example.projetfinal.DrawingUtilityClass.CustomButton;
+import com.example.projetfinal.DrawingUtilityClass.CustomImage;
+import com.example.projetfinal.Game;
+import com.example.projetfinal.Scene.GameSceneObjects.Joystick;
+import com.example.projetfinal.Scene.GameSceneObjects.Player;
+import com.example.projetfinal.R;
+import com.example.projetfinal.Enemy.Spawner;
+import com.example.projetfinal.User;
+import com.example.projetfinal.Utilities.Vector;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * Game class - Encapsulate the heart of the GAME and all of the functionalities
  */
-public class GameScene extends Scene{
+public class GameScene extends Scene {
 
 
 

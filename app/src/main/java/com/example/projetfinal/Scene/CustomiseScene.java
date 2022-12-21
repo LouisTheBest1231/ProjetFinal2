@@ -1,4 +1,4 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Scene;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,12 +7,17 @@ import android.media.MediaPlayer;
 import android.text.TextPaint;
 import android.view.MotionEvent;
 
+import com.example.projetfinal.DrawingUtilityClass.Buyable;
+import com.example.projetfinal.DrawingUtilityClass.CustomButton;
+import com.example.projetfinal.Game;
+import com.example.projetfinal.R;
+
 import java.util.ArrayList;
 
 /**
  * Encapsulate all the functionality of the class that allows the User to change skin
  */
-public class CustomiseScene extends Scene{
+public class CustomiseScene extends Scene {
 
     private CustomButton back;
     private CustomButton left;

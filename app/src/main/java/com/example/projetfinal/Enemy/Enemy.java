@@ -1,8 +1,11 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Enemy;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+
+import com.example.projetfinal.Scene.Scene;
+import com.example.projetfinal.Utilities.Vector;
 
 import java.util.Random;
 

@@ -3,18 +3,20 @@ package com.example.projetfinal;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.media.MediaPlayer;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.room.Room;
 
-import java.util.ArrayList;
+import com.example.projetfinal.DrawingUtilityClass.CustomImage;
+import com.example.projetfinal.Scene.CustomiseScene;
+import com.example.projetfinal.Scene.GameScene;
+import com.example.projetfinal.Scene.MainMenuScene;
+import com.example.projetfinal.Scene.Scene;
+import com.example.projetfinal.Scene.SettingScene;
+import com.example.projetfinal.Utilities.SongPlayer;
 
 /**
  * Game object which is a self containing instance of the gameengine

@@ -1,7 +1,9 @@
-package com.example.projetfinal;
+package com.example.projetfinal.DrawingUtilityClass;
 
 import android.content.Context;
 import android.graphics.Canvas;
+
+import com.example.projetfinal.Utilities.Vector;
 
 /**
  * Class of an Animated custom image

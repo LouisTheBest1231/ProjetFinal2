@@ -1,11 +1,12 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Scene.GameSceneObjects;
 
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 
-import androidx.core.content.ContextCompat;
+import com.example.projetfinal.DrawingUtilityClass.CustomImage;
+import com.example.projetfinal.Scene.Scene;
+import com.example.projetfinal.Utilities.Vector;
 
 /**
  * Player functionalities

@@ -1,9 +1,12 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Enemy;
 
 import android.content.Context;
 import android.graphics.Paint;
 
 import androidx.core.content.ContextCompat;
+
+import com.example.projetfinal.R;
+import com.example.projetfinal.Utilities.Vector;
 
 /**
  * Child class of an Enemy - Cyan Enemy that moves in curves

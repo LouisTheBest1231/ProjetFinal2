@@ -1,4 +1,4 @@
-package com.example.projetfinal;
+package com.example.projetfinal.DrawingUtilityClass;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -6,6 +6,12 @@ import android.graphics.Paint;
 import android.media.MediaPlayer;
 import android.text.TextPaint;
 import android.view.MotionEvent;
+
+import com.example.projetfinal.Game;
+import com.example.projetfinal.R;
+import com.example.projetfinal.Scene.CustomiseScene;
+import com.example.projetfinal.Scene.Scene;
+import com.example.projetfinal.User;
 
 /**
  * Encapsulate the objects that can be bought in the game (CustomizeScene)

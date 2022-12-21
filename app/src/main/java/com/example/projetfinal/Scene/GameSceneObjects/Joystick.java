@@ -1,4 +1,4 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Scene.GameSceneObjects;
 
 
 import android.content.Context;
@@ -6,6 +6,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 
 import androidx.core.content.ContextCompat;
+
+import com.example.projetfinal.R;
+import com.example.projetfinal.Utilities.Vector;
 
 /**
  * Joystick class that encapsulate all of the Joystick functionalities

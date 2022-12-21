@@ -1,14 +1,20 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Scene;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.media.MediaPlayer;
 import android.view.MotionEvent;
 
+import com.example.projetfinal.DrawingUtilityClass.CustomButton;
+import com.example.projetfinal.DrawingUtilityClass.CustomImage;
+import com.example.projetfinal.Game;
+import com.example.projetfinal.R;
+import com.example.projetfinal.User;
+
 /**
  * Child of SCENE - SettingScene - Encapsulate all the functionalities of the SETTINGSCENE
  */
-public class SettingScene extends Scene{
+public class SettingScene extends Scene {
 
     CustomButton back;
     CustomButton left;

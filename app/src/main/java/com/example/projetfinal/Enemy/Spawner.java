@@ -1,7 +1,10 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Enemy;
 
 import android.content.Context;
 import android.graphics.Canvas;
+
+import com.example.projetfinal.Game;
+import com.example.projetfinal.Utilities.Vector;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -52,7 +55,7 @@ public class Spawner {
      * Size of the player (r)
      * @return
      */
-    public boolean update( Game pointerGame, Vector playerPosition, float playerSize)
+    public boolean update(Game pointerGame, Vector playerPosition, float playerSize)
     {
         for(int i =enemies.size()-1; i>= 0; i--)
         {

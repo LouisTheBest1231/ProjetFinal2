@@ -1,4 +1,4 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Utilities;
 
 import android.content.Context;
 import android.media.MediaPlayer;

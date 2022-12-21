@@ -1,4 +1,4 @@
-package com.example.projetfinal;
+package com.example.projetfinal.DrawingUtilityClass;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

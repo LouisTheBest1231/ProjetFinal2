@@ -1,4 +1,4 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Utilities;
 
 /**
  * Utility class that Encapsulate the properties of a Vector

@@ -1,15 +1,12 @@
-package com.example.projetfinal;
-
-import static android.util.Log.println;
+package com.example.projetfinal.DrawingUtilityClass;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.util.Log;
 
-import java.io.Console;
+import com.example.projetfinal.DrawingUtilityClass.Sprite;
 
 /**
  * Utility class that is the foundation for the animated objects of the application

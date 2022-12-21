@@ -1,7 +1,9 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Scene;
 
 import android.graphics.Canvas;
 import android.view.MotionEvent;
+
+import com.example.projetfinal.Utilities.Vector;
 
 /**
  * Abstract class Scene to allow polymorphism of the drawing of the SCENES

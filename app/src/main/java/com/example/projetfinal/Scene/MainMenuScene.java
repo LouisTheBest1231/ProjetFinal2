@@ -1,4 +1,4 @@
-package com.example.projetfinal;
+package com.example.projetfinal.Scene;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,10 +8,15 @@ import android.view.MotionEvent;
 
 import androidx.core.content.ContextCompat;
 
+import com.example.projetfinal.DrawingUtilityClass.CustomButton;
+import com.example.projetfinal.DrawingUtilityClass.CustomImage;
+import com.example.projetfinal.Game;
+import com.example.projetfinal.R;
+
 /**
  * Child of SCENE - MainMenuScene - Encapsulate all the functionalities of the MainMenu
  */
-public class MainMenuScene  extends Scene{
+public class MainMenuScene  extends Scene {
     private Paint testPaint;
     private CustomButton playButton;
     private CustomButton customizeButton;

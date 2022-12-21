@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.media.MediaPlayer;
+import android.text.TextPaint;
 import android.view.MotionEvent;
 
 import androidx.core.content.ContextCompat;
@@ -17,7 +18,7 @@ import com.example.projetfinal.R;
  * Child of SCENE - MainMenuScene - Encapsulate all the functionalities of the MainMenu
  */
 public class MainMenuScene  extends Scene {
-    private Paint testPaint;
+    private TextPaint highscorePaint;
     private CustomButton playButton;
     private CustomButton customizeButton;
     private CustomButton settingsButton;
@@ -25,6 +26,7 @@ public class MainMenuScene  extends Scene {
     private CustomImage titre;
     private Game pointerGame;
 
+    private int HIGHSCORE;
 
 
     MediaPlayer mediaPlayerButtonSound;
@@ -36,16 +38,19 @@ public class MainMenuScene  extends Scene {
      * @param pointerGame
      * Reference to the GAME object
      */
-    public MainMenuScene(Context context, Game pointerGame) {
+    public MainMenuScene(Context context, Game pointerGame, int highscore) {
 
 
-
+        HIGHSCORE = highscore;
         mediaPlayerButtonSound = MediaPlayer.create(context, R.raw.press_sound1);
 
 
 
-        testPaint = new Paint();
-        testPaint.setColor(ContextCompat.getColor(context, R.color.white));
+       highscorePaint = new TextPaint();
+       highscorePaint.setAntiAlias(true);
+       highscorePaint.setTextSize(100);
+       highscorePaint.setTextAlign(Paint.Align.CENTER);
+       highscorePaint.setColor(0xFFFFFFFF);
 
         //Set up all the buttons with their respective positions
         titre = new CustomImage(R.drawable.gamespritesheet, 7, 3, 1,                    Scene.getCanvas().getX()/2, Scene.getCanvas().getY()/2 - 600,800,400, context);
@@ -132,7 +137,7 @@ public class MainMenuScene  extends Scene {
         customizeButton.draw(canvas);
         settingsButton.draw(canvas);
         quitButton.draw(canvas);
-
+        canvas.drawText("Highscore :" + String.valueOf(HIGHSCORE), Scene.getCanvas().getX()/2, Scene.getCanvas().getY()/2 - 300, highscorePaint);
 
     }
 

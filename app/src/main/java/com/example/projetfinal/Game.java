@@ -84,14 +84,14 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void surfaceCreated(@NonNull SurfaceHolder surfaceHolder) {
 
-        COINS = 100;
+        
 
         //Setup the public static variable that represents the canvasSize of the phone
         Scene.setCanvasSize(this.getWidth(), this.getHeight());
 
 
         //Create the necessary scene
-        currentScene = new MainMenuScene(getContext(), this);
+        currentScene = new MainMenuScene(getContext(), this, HIGHSCORE);
 
         playlist = new SongPlayer();
         playlist.addSong(getContext(), R.raw.menu_track);
@@ -183,7 +183,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
                     playlist.reset();
                     playlist.play(0);
                     //currentScene.cleanup();
-                    currentScene = new MainMenuScene(getContext(), this);
+                    currentScene = new MainMenuScene(getContext(), this, HIGHSCORE);
                 }
                 catch (OutOfMemoryError e)
                 {

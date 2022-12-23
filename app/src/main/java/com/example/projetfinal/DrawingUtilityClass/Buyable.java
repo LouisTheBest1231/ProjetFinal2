@@ -144,15 +144,12 @@ public class Buyable {
      * Unlocks skin for free (only used for first skin (the base one))
      */
 
-    public void giveBuyable(Game pointerGame)
+    public void giveBuyable()
     {
-        //Check to make sure it is the FIRST skin
-        if(BUYABLEINDEX == 0) {
+
             ISBOUGHT = true;
             ISSELECTED = true;
 
-            pointerGame.setPlayerSkin(skin);
-        }
     }
 
     /**

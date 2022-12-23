@@ -68,7 +68,7 @@ public class CustomiseScene extends Scene {
 
         //Setup of all the buyables
         skins.add(new Buyable(0, R.drawable.baseskinspritesheet, 5, 1, 70,70,context,this, pointerGame, 0));
-        skins.get(0).giveBuyable(pointerGame);
+        skins.get(0).giveBuyable();
         skins.add(new Buyable(50, R.drawable.skintestspritesheet, 5, 4, 70,70,context, this, pointerGame,1));
         skins.add(new Buyable(100, R.drawable.skin1, 5, 1, 70,70,context,this, pointerGame, 2));
         skins.add(new Buyable(100, R.drawable.skin2, 5, 1, 70,70,context,this, pointerGame, 3));
@@ -79,7 +79,9 @@ public class CustomiseScene extends Scene {
         skins.add(new Buyable(200, R.drawable.skin7, 5, 1, 70,70,context,this, pointerGame, 8));
         skins.add(new Buyable(250, R.drawable.skin8, 5, 1, 70,70,context,this, pointerGame, 9));
 
-
+        for (int i = 0; i < 10; i++) {
+            if (skinsUnlocked[i] == true) { skins.get(i).giveBuyable(); }
+        }
 
 
         //Setup of the buttons actions

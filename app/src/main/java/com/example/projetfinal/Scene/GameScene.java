@@ -332,7 +332,7 @@ public class GameScene extends Scene {
                //Change the highscore of the database
                User tempUser = Game.database().findById(1);// + sound
                if (tempUser.getScore() < SCORE) { tempUser.setScore(SCORE); }
-               tempUser.setPieces(tempUser.getPieces() + pointerGame.getCoins());
+               tempUser.setPieces(pointerGame.getCoins());
                Game.database().delete(Game.database().findById(1));
                Game.database().insert(tempUser);
 

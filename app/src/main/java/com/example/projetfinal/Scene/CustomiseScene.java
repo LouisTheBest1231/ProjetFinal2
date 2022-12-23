@@ -42,7 +42,7 @@ public class CustomiseScene extends Scene {
      * @param gameRef
      * Reference of the GAME object
      */
-    public CustomiseScene(Context context, Game gameRef)
+    public CustomiseScene(Context context, Game gameRef, Boolean[] skinsUnlocked)
     {
 
         mediaPlayerButton = MediaPlayer.create(context, R.raw.press_sound2);

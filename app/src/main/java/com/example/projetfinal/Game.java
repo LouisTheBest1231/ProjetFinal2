@@ -41,7 +41,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
 
     SongPlayer playlist;
 
-
+    CustomiseScene C1;
 
 
 
@@ -68,7 +68,56 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
         db = Room.databaseBuilder(context.getApplicationContext(),
                 AppDatabase.class, "db").allowMainThreadQueries().fallbackToDestructiveMigration().build();
         userDao = db.userDao();
-        if (userDao.getAll().size() == 0) { User user = new User(0, 100); userDao.insert(user); }
+        User user;
+        if (userDao.getAll().size() == 0) { user = new User(0, 100); userDao.insert(user); }
+        else {
+            user = userDao.findById(1);
+            int skin = user.getSelectedSkin();
+            SOUNDVALUE = user.getSound();
+            COINS = user.getPieces();
+            HIGHSCORE = user.getScore();
+            switch (skin) {
+                case 0:
+                    currentPlayerSkin = new CustomImage(R.drawable.baseskinspritesheet, 5, 1, 1, 0, 0, 70, 70, getContext());
+                    break;
+                case 1:
+                    currentPlayerSkin = new CustomImage(R.drawable.skintestspritesheet, 5, 1, 1, 0, 0, 70, 70, getContext());
+                    break;
+                case 2:
+                    currentPlayerSkin = new CustomImage(R.drawable.skin1, 5, 1, 1, 0, 0, 70, 70, getContext());
+                    break;
+                case 3:
+                    currentPlayerSkin = new CustomImage(R.drawable.skin2, 5, 1, 1, 0, 0, 70, 70, getContext());
+
+                    break;
+                case 4:
+                    currentPlayerSkin = new CustomImage(R.drawable.skin3, 5, 1, 1, 0, 0, 70, 70, getContext());
+
+                    break;
+                case 5:
+                    currentPlayerSkin = new CustomImage(R.drawable.skin4, 5, 1, 1, 0, 0, 70, 70, getContext());
+
+                    break;
+                case 6:
+                    currentPlayerSkin = new CustomImage(R.drawable.skin5, 5, 1, 1, 0, 0, 70, 70, getContext());
+
+                    break;
+                case 7:
+                    currentPlayerSkin = new CustomImage(R.drawable.skin6, 5, 1, 1, 0, 0, 70, 70, getContext());
+
+                    break;
+                case 8:
+                    currentPlayerSkin = new CustomImage(R.drawable.skin7, 5, 1, 1, 0, 0, 70, 70, getContext());
+
+                    break;
+                case 9:
+                    currentPlayerSkin = new CustomImage(R.drawable.skin8, 5, 1, 1, 0, 0, 70, 70, getContext());
+
+                    break;
+            }
+        }
+
+
 
         //!!!!GetPlayerSkin
 
@@ -182,6 +231,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
 
                     playlist.reset();
                     playlist.play(0);
+                    HIGHSCORE = userDao.findById(1).getScore();
                     //currentScene.cleanup();
                     currentScene = new MainMenuScene(getContext(), this, HIGHSCORE);
                 }
@@ -210,7 +260,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
             case 2:
                 //Teste la possibilite de memoire insuffisante de l'application
                 try {
-                    CustomiseScene c1 = new CustomiseScene(getContext(), this);
+                    CustomiseScene c1 = new CustomiseScene(getContext(), this, userDao.findById(1).getSkins());
                     c1.updateOnce();
                     //currentScene.cleanup();
                     currentScene = c1;

@@ -75,8 +75,7 @@ public class SettingScene extends Scene {
 
                 //Modify the database around new value
                 User tempUser = Game.database().findById(1);
-                if (tempUser.getSound() > 0) { tempUser.setSound(tempUser.getSound() - 20); }
-                else { tempUser.setSound(100); }
+                tempUser.setSound(soundValue);
                 Game.database().delete(Game.database().findById(1));
                 Game.database().insert(tempUser);
 
@@ -88,16 +87,15 @@ public class SettingScene extends Scene {
             @Override
             public void onClick() {
                 //Change the sprite and change the soundVALUE in the GAME object
-                int soundValue = Math.min(5, son.getAnimateurState()+1);
+                int soundValue = Math.min(4, son.getAnimateurState()+1);
                 son.setAnimateurState(soundValue);
                 pointerGame.setSoundValue(soundValue);
 
                 mediaPlayerButton.start();
 
                 //Modify the database around new value
-                User tempUser = Game.database().findById(1);// + sound
-                if (tempUser.getSound() < 100) { tempUser.setSound(tempUser.getSound() + 20); }
-                else { tempUser.setSound(0); }
+                User tempUser = Game.database().findById(1);
+                tempUser.setSound(soundValue);
                 Game.database().delete(Game.database().findById(1));
                 Game.database().insert(tempUser);
             }

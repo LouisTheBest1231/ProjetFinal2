@@ -133,7 +133,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void surfaceCreated(@NonNull SurfaceHolder surfaceHolder) {
 
-        
+
 
         //Setup the public static variable that represents the canvasSize of the phone
         Scene.setCanvasSize(this.getWidth(), this.getHeight());
@@ -146,7 +146,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
         playlist.addSong(getContext(), R.raw.menu_track);
         playlist.addSong(getContext(), R.raw.normal_track);
         playlist.addSong(getContext(), R.raw.highscore_track);
-
+        playlist.changeValue(SOUNDVALUE);
         playlist.play(0);
 
         //Create gameLoop and start it
@@ -247,7 +247,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
                 try {
                     playlist.reset();
                     playlist.play(1);
-                    //currentScene.cleanup();
+
                     currentScene = new GameScene(getContext(), this, new CustomImage(currentPlayerSkin));
                 }
                 catch (OutOfMemoryError e)
@@ -260,7 +260,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
             case 2:
                 //Teste la possibilite de memoire insuffisante de l'application
                 try {
-                    CustomiseScene c1 = new CustomiseScene(getContext(), this, userDao.findById(1).getSkins());
+                    CustomiseScene c1 = new CustomiseScene(getContext(), this, userDao.findById(1).getSkins(), userDao.findById(1).getSelectedSkin());
                     c1.updateOnce();
                     //currentScene.cleanup();
                     currentScene = c1;
@@ -298,6 +298,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
      */
     public void setSoundValue(int soundValue) {
         SOUNDVALUE = soundValue;
+        playlist.changeValue(soundValue);
     }
 
     /**

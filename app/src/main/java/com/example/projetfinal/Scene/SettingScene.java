@@ -87,7 +87,7 @@ public class SettingScene extends Scene {
             @Override
             public void onClick() {
                 //Change the sprite and change the soundVALUE in the GAME object
-                int soundValue = Math.min(4, son.getAnimateurState()+1);
+                int soundValue = Math.min(5, son.getAnimateurState()+1);
                 son.setAnimateurState(soundValue);
                 pointerGame.setSoundValue(soundValue);
 

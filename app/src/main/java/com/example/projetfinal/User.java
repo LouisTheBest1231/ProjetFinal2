@@ -52,7 +52,7 @@ public class User {
     public User(int score, int pieces) {
         this.score = score;
         this.pieces = pieces;
-        this.sound = 4;
+        this.sound = 5;
         this.skins = new Boolean[]{true, false, false, false, false, false, false, false, false, false};
         this.selectedSkin = 0;
     }

@@ -148,8 +148,14 @@ public class Buyable {
     {
 
             ISBOUGHT = true;
-            ISSELECTED = true;
+    }
 
+    /**
+     * Set the current selected skin
+     */
+    public void setSelected()
+    {
+        ISSELECTED = true;
     }
 
     /**
